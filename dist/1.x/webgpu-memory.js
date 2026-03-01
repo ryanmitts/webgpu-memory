@@ -426,6 +426,32 @@
                multisample: true,
                /*prettier-ignore*/ get bytesPerBlock() { return this.color.bytes; },
            },
+           rgba16unorm: {
+               color: {
+                   type: 'float',
+                   copySrc: true,
+                   copyDst: true,
+                   storage: true,
+                   readWriteStorage: false,
+                   bytes: 8,
+               },
+               colorRender: { blend: true, resolve: true, byteCost: 8, alignment: 2 },
+               multisample: true,
+               /*prettier-ignore*/ get bytesPerBlock() { return this.color.bytes; },
+           },
+           rgba16snorm: {
+               color: {
+                   type: 'float',
+                   copySrc: true,
+                   copyDst: true,
+                   storage: true,
+                   readWriteStorage: false,
+                   bytes: 8,
+               },
+               colorRender: { blend: true, resolve: true, byteCost: 8, alignment: 2 },
+               multisample: true,
+               /*prettier-ignore*/ get bytesPerBlock() { return this.color.bytes; },
+           },
            // plain, 32 bits per component
            r32uint: {
                color: {
