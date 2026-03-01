@@ -317,6 +317,20 @@ const kRegularTextureFormatInfo = formatTableWithDefaults({
 
     // plain, 16 bits per component
 
+    r16unorm: {
+      color: {
+        type: 'float',
+        copySrc: true,
+        copyDst: true,
+        storage: false,
+        readWriteStorage: false,
+        bytes: 2,
+      },
+      colorRender: { blend: true, resolve: true, byteCost: 2, alignment: 2 },
+      multisample: true,
+      feature: 'texture-formats-tier2',
+      /*prettier-ignore*/ get bytesPerBlock() { return this.color.bytes; },
+    },
     r16uint: {
       color: {
         type: 'uint',
